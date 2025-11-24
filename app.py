@@ -114,9 +114,9 @@ def internal_error(error):
 
 if __name__ == '__main__':
     print("🚀 Starting NewsGuard AI Fake News Detection Server...")
-    print("📱 Open your browser and go to: http://localhost:5000")
-    print("🔍 API endpoint available at: http://localhost:5000/api/predict")
-    print("💚 Health check at: http://localhost:5000/health")
+    
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=os.environ.get('FLASK_ENV') != 'production')
     
     # Check if running in production
     if os.environ.get('FLASK_ENV') == 'production':
