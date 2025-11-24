@@ -1,27 +1,39 @@
+# ---- Core libraries ----
+Flask==2.3.3
+gunicorn==21.2.0
+Jinja2==3.1.2
+Werkzeug==2.3.7
+itsdangerous==2.1.2
+click==8.1.7
+MarkupSafe==2.1.3
+
+# ---- ML / NLP ----
 joblib==1.3.2
-sentence-transformers==2.2.2
-huggingface-hub==0.16.4
-nltk==3.8.1
 numpy==1.26.4
-gnews==0.3.7
-scikit-learn==1.3.0
+scipy==1.11.4              # required by scikit-learn wheels
+scikit-learn==1.3.0        # compatible with numpy 1.26
+nltk==3.8.1
+
+# ---- Transformer models ----
 torch==2.2.0
 transformers==4.30.2
-Werkzeug==2.3.7
-Jinja2==3.1.2
-MarkupSafe==2.1.3
-click==8.1.7
-itsdangerous==2.1.2
+sentence-transformers==2.2.2
+tokenizers==0.13.3
+safetensors==0.3.2
+
+# ---- HuggingFace ----
+huggingface-hub==0.16.4
+filelock>=3.0.0
+regex>=2021.0.0
+packaging>=20.0
+tqdm>=4.62.0
+
+# ---- Requests stack ----
 requests>=2.28.0
 urllib3>=1.26.0
 certifi>=2022.0.0
 charset-normalizer>=2.0.0
 idna>=2.8
-tokenizers>=0.13.0
-safetensors>=0.3.0
-regex>=2021.0.0
-tqdm>=4.62.0
-filelock>=3.0.0
-packaging>=20.0
-Flask>=2.0
-gunicorn
+
+# ---- Extra dependencies ----
+gnews==0.3.7
