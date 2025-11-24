@@ -128,4 +128,9 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    print("🚀 Starting NewsGuard AI Fake News Detection
+    print("🚀 Starting NewsGuard AI Fake News Detection Server...")
+
+    # Always read PORT from environment so Render's port-scan detects it
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_ENV') != 'production'
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)
